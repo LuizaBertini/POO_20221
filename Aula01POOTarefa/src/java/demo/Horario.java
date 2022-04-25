@@ -53,6 +53,12 @@ public class Horario {
         this.minuto = minuto;
     }
     
+    public void setHorario(int hora,int minuto, int segundo){
+        this.hora =  hora;
+        this.minuto =  minuto;
+        this.segundo =  segundo;
+    }
+    
     public String getHorario(){
         return hora + ":" + minuto + ":" + segundo;
     }

@@ -11,6 +11,9 @@
 <%
 Horario intervalo = new Horario(14, 50, 01);
 
+Horario atual = new Horario();
+atual.setHorario(18, 11, 44);
+
 DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
         //return dtf.format(LocalDateTime.now());
 %>
@@ -24,8 +27,8 @@ DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
         <h1>Horarios</h1>
         
         <h3>Horário do Intervalo: <%= intervalo.getHorario()%></h3>
-        
-        <h3>Horário Atual: <%= dtf.format(LocalDateTime.now())%></h3>
+        <h3>Horário Atual (com a classe Horario): <%= atual.getHorario()%></h3>
+        <h3>Horário Atual (com a classe LocalDateTime.now()): <%= dtf.format(LocalDateTime.now())%></h3>
         
         <hr/>
         
