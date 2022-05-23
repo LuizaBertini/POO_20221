@@ -22,6 +22,57 @@ public class Users {
     private long passwordHash;
     private String name;
     
+    public static void AddUsers(Users user) throws Exception {
+                
+        Class.forName("org.sqlite.JDBC"); 
+        String url = "jdbc:sqlite:mytasks.db"; // sem o caminho, irá criar um novo arquivo onde o proj está
+        Connection conn = DriverManager.getConnection(url);
+        
+        //comando para inserir um novo usuario no bdd
+        PreparedStatement stmt = conn.prepareStatement("insert or ignore into users(username, name, pass_hash) values(? ,?, ?)");
+        //colocando os parametros no value da linha acima
+        stmt.setString(1, user.getUsername());
+        stmt.setString(2, user.getName());
+        stmt.setLong(3, user.getPasswordHash());
+        
+        stmt.execute();
+        
+        conn.close();
+        stmt.close();
+        
+    }
+    
+    public static void DeleteUsers(String username) throws Exception {
+                
+        Class.forName("org.sqlite.JDBC"); 
+        String url = "jdbc:sqlite:mytasks.db"; // sem o caminho, irá criar um novo arquivo onde o proj está
+        Connection conn = DriverManager.getConnection(url);
+        
+        PreparedStatement stmt = conn.prepareStatement("delete from users where username = ?");
+        stmt.setString(1, username);
+        stmt.execute();
+        
+        conn.close();
+        stmt.close();
+        
+    }
+    
+    public static void AlterUserPassword(String username, String newPassword) throws Exception {
+                
+        Class.forName("org.sqlite.JDBC"); 
+        String url = "jdbc:sqlite:mytasks.db"; // sem o caminho, irá criar um novo arquivo onde o proj está
+        Connection conn = DriverManager.getConnection(url);
+        
+        PreparedStatement stmt = conn.prepareStatement("update users set pass_hash = ? where username = ?");
+        stmt.setString(1, newPassword);
+        stmt.setString(2, username);
+        stmt.execute();
+        
+        conn.close();
+        stmt.close();
+        
+    }
+    
     public static ArrayList<Users> getAllUsers() throws Exception {
         
         ArrayList<Users> list = new ArrayList<>();

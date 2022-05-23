@@ -3,10 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Fatec/Desktop/apache-tomcat-10.0.2-windows-x64/apache-tomcat-10.0.2/Aula13/src/java/model/Users.java</file>
-            <file>file:/C:/Users/Fatec/Desktop/apache-tomcat-10.0.2-windows-x64/apache-tomcat-10.0.2/Aula13/web/index.jsp</file>
-            <file>file:/C:/Users/Fatec/Desktop/apache-tomcat-10.0.2-windows-x64/apache-tomcat-10.0.2/Aula13/src/java/db/CreateListener.java</file>
-            <file>file:/C:/Users/Fatec/Desktop/apache-tomcat-10.0.2-windows-x64/apache-tomcat-10.0.2/Aula13/web/WEB-INF/jspf/header.jspf</file>
+            <file>file:/C:/Users/Fatec/Desktop/Aula13/web/WEB-INF/jspf/header.jspf</file>
+            <file>file:/C:/Users/Fatec/Desktop/Aula13/src/java/db/CreateListener.java</file>
+            <file>file:/C:/Users/Fatec/Desktop/Aula13/src/java/model/Users.java</file>
+            <file>file:/C:/Users/Fatec/Desktop/Aula13/web/index.jsp</file>
+            <file>file:/C:/Users/Fatec/Desktop/Aula13/web/users.jsp</file>
         </group>
     </open-files>
 </project-private>

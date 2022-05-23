@@ -14,12 +14,14 @@
                 requestException = new Exception ("Usuário não encontrado ou senha incorreta!");
             } else {
                 session.setAttribute("user", user);
+                response.sendRedirect(request.getRequestURI());
             }
         } catch (Exception ex) {
             requestException = ex;
         }
     } else if(request.getParameter("logoff") != null) {
         session.removeAttribute("user");
+        response.sendRedirect(request.getRequestURI());
     }
 
 %>
@@ -46,6 +48,8 @@
     </form>
 <%} else {%>
     <form method="post">
+        <a href="index.jsp"> Index </a> | 
+        <a href="users.jsp"> Usuários </a> | 
         Bem vindo, <%= ((Users)session.getAttribute("user")).getName() %>
         <input type="submit" name="logoff" value="Sair"/> 
     </form>
